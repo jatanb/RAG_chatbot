@@ -1,0 +1,14 @@
+langchain
+langchain-community
+pymupdf
+sentence-transformers
+langchain-google-genai
+flask
+flask-cors
+pandas
+numpy
+chromadb
+pypdf
+python-dotenv
+streamlit
+faiss-cpu
