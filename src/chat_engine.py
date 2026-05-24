@@ -365,25 +365,3 @@ if __name__ == "__main__":
 
     engine = ChatEngine()
     engine.initialize()
-
-    if engine.is_ready:
-
-        test_questions = [
-            "WFH policy",
-            "wfh",
-            "How many sl do I get?",
-            "what is cl?",
-            "What is notice period?",
-            "how to get 90lpa",
-            "who is virat kohli",
-        ]
-
-        print("\n" + "=" * 50)
-        print("TESTING CHAT ENGINE")
-        print("=" * 50)
-
-        for q in test_questions:
-            print(f"\nYou: {q}")
-            answer = engine.chat(q)
-            print(f"Bot: {answer}")
-            print("-" * 40)
