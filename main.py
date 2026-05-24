@@ -108,20 +108,7 @@ with st.sidebar:
 
     st.divider()
 
-    # Sample questions
-    st.subheader("💡 Try asking")
-    sample_questions = [
-        "How many sick leaves do I get?",
-        "What is the WFH policy?",
-        "What is the notice period?",
-        "How do I apply for maternity leave?",
-        "What are the working hours?"
-    ]
 
-    for q in sample_questions:
-        if st.button(q, use_container_width=True, key=q):
-            st.session_state.pending_question = q
-            st.rerun()
 
     st.divider()
     st.caption("Built with LangChain + Gemini + FAISS")
@@ -129,13 +116,13 @@ with st.sidebar:
 
 
 
-# ── Display existing messages ────────────────────────────
+# ── Display existing messages
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
 
-# ── Handle sidebar question clicks ──────────────────────
+# ── Handle sidebar question clicks 
 if "pending_question" in st.session_state:
     question = st.session_state.pending_question
     del st.session_state.pending_question
