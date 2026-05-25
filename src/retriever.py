@@ -11,15 +11,18 @@ from src.vector_store import load_vectorstore
 
 
 def get_retriever(vectorstore, top_k=TOP_K_RESULTS):
-    """Convert vectorstore into a LangChain retriever"""
+    """Get retriever with MMR search for diverse results"""
 
     retriever = vectorstore.as_retriever(
-        search_type="similarity",
-        search_kwargs={"k": top_k}
+        search_type="mmr",
+        search_kwargs={
+            "k": top_k,        # return 7 chunks
+            "fetch_k": 20,     # consider top 20 first
+            "lambda_mult": 0.7 # balance relevance vs diversity
+        }
     )
 
-
-    print(f"Retriever ready — fetching top {top_k} chunks per query")
+    print(f"Retriever ready — MMR search, top {top_k} chunks")
     return retriever
 
 
