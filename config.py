@@ -11,7 +11,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 LLM_MODEL = "gemini-3.5-flash"         
 EMBEDDING_MODEL = "models/embedding-001" 
-TEMPERATURE = 0.5                        
+TEMPERATURE = 0.1                      
 
 
 def get_api_key():
