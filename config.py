@@ -1,8 +1,9 @@
 import os
 from dotenv import load_dotenv
-# Load .env file
+import streamlit as st
 load_dotenv()
 
+<<<<<<< HEAD
 #  Gemini API
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
@@ -10,13 +11,33 @@ LLM_MODEL = "gemini-3.5-flash"
 EMBEDDING_MODEL = "models/embedding-001" 
 TEMPERATURE = 0.5                        
 
+=======
+def get_api_key():
+    
+    try:
+        return st.secrets["GOOGLE_API_KEY"]
+    except:
+        
+        return os.getenv("GOOGLE_API_KEY")
+
+GOOGLE_API_KEY = get_api_key()
+
+LLM_MODEL = "gemini-3.5-flash"         
+EMBEDDING_MODEL = "models/embedding-001" 
+TEMPERATURE = 0.2                      
+
+>>>>>>> ed97a0f2 (final change)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data", "raw")
 VECTORSTORE_DIR = os.path.join(BASE_DIR, "vectorstore")
 
 
+<<<<<<< HEAD
 CHUNK_SIZE = 300      
+=======
+CHUNK_SIZE = 300       
+>>>>>>> ed97a0f2 (final change)
 CHUNK_OVERLAP = 20     
 
 
@@ -31,5 +52,9 @@ FLASK_DEBUG = True
 STREAMLIT_TITLE = "RAG Chatbot"
 STREAMLIT_ICON = "🤖"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ed97a0f2 (final change)
 if not GOOGLE_API_KEY:
     raise ValueError("GOOGLE_API_KEY not found. Check your .env file.")
