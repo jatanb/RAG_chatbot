@@ -94,6 +94,7 @@ with st.sidebar:
     st.metric(
         label="Total Exchanges",
         value=st.session_state.exchange_count
+        value=st.session_state.exchange_count2
     )
 
     st.divider()
