@@ -83,7 +83,7 @@ with st.sidebar:
     # Engine status
     status = engine.get_status()
     if status["is_ready"]:
-        st.success("✅ Engine Ready")
+        st.success("Explore Here")
     else:
         st.error("❌ Engine Not Ready")
         st.info("Run ingest.py first!")
